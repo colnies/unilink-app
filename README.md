@@ -1,87 +1,105 @@
-UniLink App
-UniLink is a social networking application designed for university students to connect, collaborate, and engage in various campus activities. Built with Ionic Angular, it provides a platform for students to share academic, fitness, and social events.
-Features
-Authentication
+# UniLink App
 
-Login with school email
-Sign in with Google/Apple
-Secure password management
+A social networking application designed for university students to connect, collaborate, and engage in various campus activities. Built with Ionic Angular, it provides a platform for students to share academic, fitness, and social events.
 
-Main Feed
+## Features
 
-Filter posts by category (School, Fitness, Social)
-View and interact with posts
-Upvote system
-Real-time updates
+### Authentication
+* Login with school email
+* Sign in with Google/Apple
+* Secure password management
 
-Interactive Map
+### Main Feed
+* Filter posts by category (School, Fitness, Social)
+* View and interact with posts
+* Upvote system
+* Real-time updates
 
-View nearby activities and events
-Category-based markers
-User location integration
-Filter events by type
+### Interactive Map
+* View nearby activities and events
+* Category-based markers
+* User location integration
+* Filter events by type
 
-Create Posts
+### Create Posts
+* Multiple categories support
+* Location tagging option
+* Anonymous posting capability
+* Rich text content
 
-Multiple categories support
-Location tagging option
-Anonymous posting capability
-Rich text content
+### User Profiles
+* View personal posts
+* Track activity statistics
+* Manage account settings
+* Privacy controls
 
-User Profiles
+## Prerequisites
 
-View personal posts
-Track activity statistics
-Manage account settings
-Privacy controls
+* Node.js (v16 or higher)
+* npm (v8 or higher)
+* Ionic CLI
+* Angular CLI
+* Android Studio (for Android development)
+* Xcode (for iOS development, Mac only)
 
-Prerequisites
+## Installation
 
-Node.js (v16 or higher)
-npm (v8 or higher)
-Ionic CLI
-Angular CLI
-Android Studio (for Android development)
-Xcode (for iOS development, Mac only)
+1. Install the required CLIs:
+```bash
+npm install -g @ionic/cli @angular/cli
+```
 
-Installation
-
-Install the required CLIs:
-
-Copynpm install -g @ionic/cli @angular/cli
-
-Clone the repository:
-
-Copygit clone [repository-url]
+2. Clone the repository:
+```bash
+git clone [repository-url]
 cd unilink-app
+```
 
-Install dependencies:
+3. Install dependencies:
+```bash
+npm install
+```
 
-Copynpm install
-
-Add platform-specific files:
-
-Copy# For Android
+4. Add platform-specific files:
+```bash
+# For Android
 npm install @capacitor/android
 npx cap add android
 
 # For iOS
 npm install @capacitor/ios
 npx cap add ios
-Running the App
-Development Server
-Copyionic serve
-Access the app at http://localhost:8100
-Mobile Preview
-Copyionic serve --lab
-Access the mobile preview at http://localhost:8100/ionic-lab
-Running on Emulator
+```
+
+## Running the App
+
+### Development Server
+```bash
+ionic serve
+```
+Access the app at `http://localhost:8100`
+
+### Mobile Preview
+```bash
+ionic serve --lab
+```
+Access the mobile preview at `http://localhost:8100/ionic-lab`
+
+### Running on Emulator
+
 Android:
-Copyionic cap run android -l --external
+```bash
+ionic cap run android -l --external
+```
+
 iOS (Mac only):
-Copyionic cap run ios -l --external
-Project Structure
-Copysrc/
+```bash
+ionic cap run ios -l --external
+```
+
+## Project Structure
+```
+src/
 ├── app/
 │   ├── pages/
 │   │   ├── login/
@@ -98,35 +116,57 @@ Copysrc/
 │       └── post.interface.ts
 ├── assets/
 └── theme/
-Building for Production
+```
 
-Build the app:
+## Building for Production
 
-Copyionic build --prod
+1. Build the app:
+```bash
+ionic build --prod
+```
 
-Sync with native projects:
+2. Sync with native projects:
+```bash
+npx cap sync
+```
 
-Copynpx cap sync
-
-Open in native IDEs:
-
-Copy# For Android
+3. Open in native IDEs:
+```bash
+# For Android
 npx cap open android
 
 # For iOS
 npx cap open ios
-Dependencies
+```
 
-@ionic/angular
-@capacitor/core
-@capacitor/ios
-@capacitor/android
-leaflet (for maps)
+## Dependencies
 
-Development Guidelines
+* @ionic/angular
+* @capacitor/core
+* @capacitor/ios
+* @capacitor/android
+* leaflet (for maps)
 
-Use standalone components
-Follow Angular best practices
-Implement proper error handling
-Maintain consistent code formatting
-Write meaningful commit messages
+## Development Guidelines
+
+* Use standalone components
+* Follow Angular best practices
+* Implement proper error handling
+* Maintain consistent code formatting
+* Write meaningful commit messages
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+[Your License Here]
+
+## Contact
+
+[Your Contact Information]
