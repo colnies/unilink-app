@@ -1,0 +1,94 @@
+ion-toolbar {
+    --padding-top: 8px;
+    --padding-bottom: 8px;
+    
+    ion-searchbar {
+      --background: #f4f5f8;
+      --border-radius: 10px;
+      --placeholder-color: #92949c;
+      --placeholder-opacity: 1;
+      padding: 0 16px;
+      height: 40px;
+    }
+  }
+
+#map {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .category-segment {
+    padding: 5px;
+    
+    ion-segment-button {
+      --color: var(--ion-color-medium);
+      --color-checked: var(--ion-color-primary);
+      --indicator-color: var(--ion-color-primary);
+    }
+  }
+  
+  .post-card {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    margin: 0;
+    z-index: 1000;
+    
+    .post-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+    
+    p {
+      margin: 0 0 12px;
+      color: var(--ion-color-medium);
+    }
+    
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      
+      .upvotes {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: var(--ion-color-medium);
+        
+        ion-icon {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  
+  // Custom marker styles
+  .marker-pin {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 0;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 50%;
+    top: 50%;
+    margin: -15px 0 0 -15px;
+    
+    &::after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      margin: 3px 0 0 3px;
+      background: #fff;
+      position: absolute;
+      border-radius: 50%;
+    }
+  }

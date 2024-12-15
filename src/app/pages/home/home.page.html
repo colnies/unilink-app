@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-searchbar placeholder="Search" mode="ios"></ion-searchbar>
+      </ion-toolbar>
+      <ion-segment [(ngModel)]="selectedCategory" (ionChange)="categoryChanged()" class="category-segment">
+        <ion-segment-button value="Hot">
+          <ion-icon name="flame"></ion-icon>
+          <ion-label>Hot</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="School">
+          <ion-icon name="school"></ion-icon>
+          <ion-label>School</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Fitness">
+          <ion-icon name="barbell"></ion-icon>
+          <ion-label>Fitness</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="Social">
+          <ion-icon name="people"></ion-icon>
+          <ion-label>Social</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <app-post-card 
+        *ngFor="let post of posts" 
+        [post]="post"
+        class="post-card-item">
+      </app-post-card>
+    </ion-list>
+  </ion-content>
+  
+  <ion-footer>
+    <ion-tab-bar>
+      <ion-tab-button (click)="navigateTo('/home')" [selected]="true">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="navigateTo('/map')">
+        <ion-icon name="map-outline"></ion-icon>
+        <ion-label>Map</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="navigateTo('/create-post')">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <ion-label>Post</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="navigateTo('/profile')">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-footer>

@@ -1,0 +1,88 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Create Post</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <form [formGroup]="postForm" (ngSubmit)="submitPost()">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Category</ion-label>
+          <ion-select formControlName="category" interface="action-sheet">
+            <ion-select-option *ngFor="let category of categories" [value]="category">
+              {{ category }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Title</ion-label>
+          <ion-input 
+            formControlName="title" 
+            type="text"
+            [counter]="true" 
+            maxlength="50">
+          </ion-input>
+        </ion-item>
+        <div class="validation-error" *ngIf="postForm.get('title')?.touched && postForm.get('title')?.invalid">
+          <span *ngIf="postForm.get('title')?.errors?.['required']">Title is required</span>
+          <span *ngIf="postForm.get('title')?.errors?.['minlength']">Title must be at least 5 characters</span>
+        </div>
+  
+        <ion-item>
+          <ion-label position="floating">Content</ion-label>
+          <ion-textarea 
+            formControlName="content"
+            [counter]="true" 
+            maxlength="500"
+            [autoGrow]="true"
+            rows="6">
+          </ion-textarea>
+        </ion-item>
+        <div class="validation-error" *ngIf="postForm.get('content')?.touched && postForm.get('content')?.invalid">
+          <span *ngIf="postForm.get('content')?.errors?.['required']">Content is required</span>
+          <span *ngIf="postForm.get('content')?.errors?.['minlength']">Content must be at least 10 characters</span>
+        </div>
+  
+        <ion-item>
+          <ion-label>Post Anonymously</ion-label>
+          <ion-toggle formControlName="isAnonymous"></ion-toggle>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>Include Location</ion-label>
+          <ion-toggle formControlName="includeLocation"></ion-toggle>
+        </ion-item>
+  
+        <ion-button 
+          expand="block" 
+          type="submit" 
+          [disabled]="!postForm.valid"
+          class="submit-button">
+          Create Post
+        </ion-button>
+      </ion-list>
+    </form>
+  </ion-content>
+  
+  <ion-footer>
+    <ion-tab-bar>
+      <ion-tab-button (click)="navigateTo('/home')">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="navigateTo('/map')">
+        <ion-icon name="map-outline"></ion-icon>
+        <ion-label>Map</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="navigateTo('/create-post')" [selected]="true">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <ion-label>Post</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="navigateTo('/profile')">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-footer>

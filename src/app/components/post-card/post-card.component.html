@@ -1,0 +1,32 @@
+<ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ post.title }}</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <p>{{ post.content }}</p>
+      
+      <div class="post-footer">
+        <div class="post-meta">
+          <ion-chip size="small" color="primary" class="category-chip">
+            <ion-label>{{ post.category }}</ion-label>
+          </ion-chip>
+          
+          <ion-chip size="small" class="time-chip">
+            <ion-icon name="time-outline"></ion-icon>
+            <ion-label>{{ post.timestamp | date:'shortTime' }}</ion-label>
+          </ion-chip>
+          
+          <ion-chip *ngIf="post.location" size="small" class="location-chip">
+            <ion-icon name="location-outline"></ion-icon>
+            <ion-label>Nearby</ion-label>
+          </ion-chip>
+        </div>
+        
+        <ion-button fill="clear" size="small" class="upvote-button">
+          <ion-icon name="arrow-up-outline" slot="start"></ion-icon>
+          {{ post.upvotes }}
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>

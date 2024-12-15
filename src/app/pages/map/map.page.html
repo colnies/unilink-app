@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-searchbar placeholder="Search" mode="ios"></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div #map id="map"></div>
+    
+    <!-- Selected Post Card -->
+    <ion-card class="post-card" *ngIf="selectedPost">
+      <ion-card-content>
+        <div class="post-header">
+          <h2>{{ selectedPost.title }}</h2>
+          <ion-button fill="clear" (click)="closePostDetails()">
+            <ion-icon name="close-outline"></ion-icon>
+          </ion-button>
+        </div>
+        <p>{{ selectedPost.content }}</p>
+        <div class="post-meta">
+          <ion-badge [color]="selectedPost.category === 'School' ? 'primary' : 
+                            selectedPost.category === 'Fitness' ? 'success' : 
+                            'tertiary'">
+            {{ selectedPost.category }}
+          </ion-badge>
+          <span class="upvotes">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+            {{ selectedPost.upvotes }}
+          </span>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  
+  <ion-footer>
+    <ion-tab-bar>
+      <ion-tab-button (click)="navigateTo('/home')">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="navigateTo('/map')" [selected]="true">
+        <ion-icon name="map-outline"></ion-icon>
+        <ion-label>Map</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="navigateTo('/create-post')">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <ion-label>Post</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="navigateTo('/profile')">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-footer>

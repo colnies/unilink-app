@@ -1,0 +1,59 @@
+ion-list {
+  background: transparent;
+  padding: 0;
+}
+
+ion-input {
+  --background: var(--ion-color-light);
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --border-radius: 8px;
+  margin-top: 4px;
+}
+
+ion-select {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  width: 100%;
+}
+
+ion-toggle {
+  padding-right: 16px;
+}
+
+ion-button {
+  --border-radius: 8px;
+  height: 48px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+
+
+// Add smooth transitions
+ion-input,
+ion-textarea,
+ion-button {
+  transition: all 0.2s ease-in-out;
+}
+
+// Focus states
+ion-item.item-has-focus {
+  --highlight-background: var(--ion-color-primary);
+  
+  ion-label {
+    color: var(--ion-color-primary);
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  ion-input,
+  ion-textarea {
+    --background: rgba(var(--ion-color-light-rgb), 0.1);
+  }
+  
+  .validation-error {
+    opacity: 0.9;
+  }
+}
